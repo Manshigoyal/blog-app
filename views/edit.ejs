@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Blog</title>
+</head>
+
+<body>
+
+<h1>Edit Blog</h1>
+
+<form action="/edit/<%= blog._id %>" method="POST">
+
+    <input
+        type="text"
+        name="title"
+        value="<%= blog.title %>"
+    >
+
+    <br><br>
+
+    <textarea name="content"><%= blog.content %></textarea>
+
+    <br><br>
+
+    <button>Update Blog</button>
+
+</form>
+
+</body>
+</html>
