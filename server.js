@@ -34,11 +34,11 @@ app.use(session({
 // DATABASE CONNECTION
 // ===================================
 
-mongoose.connect("mongodb://127.0.0.1:27017/blogDB")
+mongoose.connect("mongodb+srv://manshigoyal06_db_user:tcW5I4zOlCHx5246@cluster0.c0geh5c.mongodb.net/blogDB?retryWrites=true&w=majority")
 
 .then(() => {
 
-    console.log("MongoDB Connected");
+    console.log("MongoDB Atlas Connected");
 
 })
 
@@ -419,7 +419,7 @@ app.post("/register", upload.single("profileImage"), async (req, res) => {
 
             bio: req.body.bio,
 
-            profileImage: req.file.filename
+            profileImage: req.file ? req.file.filename : ""
 
         });
 
@@ -517,8 +517,10 @@ app.get("/logout", (req, res) => {
 // SERVER
 // ===================================
 
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000;
 
-    console.log("Server Running on Port 3000");
+app.listen(PORT, () => {
+
+    console.log(`Server Running on Port ${PORT}`);
 
 });
