@@ -53,7 +53,7 @@ mongoose.connect("mongodb+srv://manshigoyal06_db_user:tcW5I4zOlCHx5246@cluster0.
 // MODELS
 // ===================================
 
-const Blog = require("./models/Blog");
+const Blog = require("./models/Blog.js");
 
 const User = require("./models/User");
 
